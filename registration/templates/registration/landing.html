@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-white flex flex-col items-center justify-center min-h-screen space-y-8">
+
+    <!-- First Image Full Width for Laptop Screen -->
+    <div >
+        <img src="{% static 'images/image1.jpg' %}" alt="First Photo" class="w-full h-1/5 object-cover rounded-lg shadow-md">
+
+    </div>
+
+    <!-- Register Button -->
+    <div>
+        <a href="{% url 'register' %}" class="bg-blue-500 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 shadow-lg transition-all duration-200">
+            Register Now
+        </a>
+    </div>
+
+    <!-- Second Image Full Width for Laptop Screen -->
+    <div >
+        <img src="{% static 'images/image2.jpg' %}" alt="Second Photo" class="w-full h-full object-cover rounded-lg shadow-md">
+    </div>
+
+</body>
+</html>

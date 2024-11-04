@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-white flex items-center justify-center min-h-screen">
+
+    <div class="bg-white p-10 rounded-xl shadow-lg max-w-md w-full border border-gray-200">
+        <h1 class="text-4xl font-extrabold text-center mb-6 text-gray-800">Workshop Registration</h1>
+        <p class="text-center text-gray-600 mb-8">Fill in your details below to register for the upcoming workshop.</p>
+
+        {% if error_message %}
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
+                <p>{{ error_message }}</p>
+            </div>
+        {% endif %}
+
+        <form method="post" class="space-y-5">
+            {% csrf_token %}
+
+            <!-- Name Field -->
+            <div>
+                <label for="id_name" class="block text-gray-700 font-semibold mb-1">Name</label>
+                <input type="text" name="name" id="id_name" class="input-field w-full py-2 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                {% if form.name.errors %}
+                    <p class="text-red-500 text-sm mt-1">{{ form.name.errors|first }}</p>
+                {% endif %}
+            </div>
+
+            <!-- Email Field -->
+            <div>
+                <label for="id_email" class="block text-gray-700 font-semibold mb-1">Email</label>
+                <input type="email" name="email" id="id_email" class="input-field w-full py-2 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                {% if form.email.errors %}
+                    <p class="text-red-500 text-sm mt-1">{{ form.email.errors|first }}</p>
+                {% endif %}
+            </div>
+
+            <!-- Department Field -->
+            <div>
+                <label for="id_department" class="block text-gray-700 font-semibold mb-1">Department</label>
+                <input type="text" name="department" id="id_department" class="input-field w-full py-2 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                {% if form.department.errors %}
+                    <p class="text-red-500 text-sm mt-1">{{ form.department.errors|first }}</p>
+                {% endif %}
+            </div>
+
+            <!-- Phone Number Field -->
+            <div>
+                <label for="id_phone_number" class="block text-gray-700 font-semibold mb-1">Phone Number</label>
+                <input type="text" name="phone_number" id="id_phone_number" class="input-field w-full py-2 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                {% if form.phone_number.errors %}
+                    <p class="text-red-500 text-sm mt-1">{{ form.phone_number.errors|first }}</p>
+                {% endif %}
+            </div>
+
+            <!-- Slap Field -->
+            <div>
+                <label for="id_slap" class="block text-gray-700 font-semibold mb-1">Slap</label>
+                <input type="text" name="slap" id="id_slap" class="input-field w-full py-2 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                {% if form.slap.errors %}
+                    <p class="text-red-500 text-sm mt-1">{{ form.slap.errors|first }}</p>
+                {% endif %}
+            </div>
+
+            <!-- Submit Button -->
+            <div class="flex justify-center">
+                <button type="submit" class="bg-purple-500 text-white font-semibold py-3 px-6 rounded-lg hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-600 shadow-lg transition-all duration-200">
+                    Register Now
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
