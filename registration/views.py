@@ -7,10 +7,14 @@ from .forms import RegistrationForm
 from .models import Registration  # Replace 'YourModel' with your actual model name
 
 # Landing page with a "Register" button
+
+
 def landing(request):
     return render(request, 'registration/landing.html')
 
 # Registration form page
+
+
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
@@ -55,12 +59,15 @@ def register(request):
     return render(request, 'registration/register.html', {'form': form})
 
 # Thank you page
+
+
 def thank_you(request):
     return render(request, 'registration/thank_you.html', {
         'message': "Thank you for registering! A confirmation email has been sent to your inbox."
     })
 
 # Export data to Excel
+
 def export_to_excel(request):
     # Fetch data from your Django model
     data = Registration.objects.all().values()
@@ -68,11 +75,12 @@ def export_to_excel(request):
     df = pd.DataFrame(list(data))
 
     # Create a response with the appropriate Excel headers
-    response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response = HttpResponse(
+        content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
     response['Content-Disposition'] = 'attachment; filename="exported_data.xlsx"'
 
     # Write DataFrame to an Excel file in the response
     with pd.ExcelWriter(response, engine='openpyxl') as writer:
         df.to_excel(writer, index=False, sheet_name='Sheet1')
-    
+
     return response

@@ -1,31 +1,146 @@
 {% load static %}
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
 </head>
-<body class="bg-white flex flex-col items-center justify-center min-h-screen space-y-8">
 
-    <!-- First Image Full Width for Laptop Screen -->
-    <div >
-        <img src="{% static 'images/image1.jpg' %}" alt="First Photo" class="w-full h-1/5 object-cover rounded-lg shadow-md">
+<body>
+    <div class="container-fluid">
+        <div class="row" style="min-height: 40vh;">
+            <!-- Left half with image -->
+            <div class="col-md-6 col-12 p-0">
+                <img src="{% static 'images/g48.jpg' %}" alt="Image 1" class="img-fluid w-100 h-100">
+            </div>
+            <!-- Right half with image -->
+            <div class="col-md-6 col-12 d-flex flex-column align-items-center justify-content-center text-white position-relative"
+                style="background-color: #03091D">
+                <img src="{% static 'images/new.svg' %}" alt="Image Not Found" class="img-fluid">
+            </div>
+        </div>
 
-    </div>
 
-    <!-- Register Button -->
-    <div>
-        <a href="{% url 'register' %}" class="bg-blue-500 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 shadow-lg transition-all duration-200">
-            Register Now
-        </a>
-    </div>
 
-    <!-- Second Image Full Width for Laptop Screen -->
-    <div >
-        <img src="{% static 'images/image2.jpg' %}" alt="Second Photo" class="w-full h-full object-cover rounded-lg shadow-md">
-    </div>
 
+
+
+        <div class="row">
+            <!-- Left side block -->
+            <div class="col-md-12 mb-4 d-flex justify-content-between align-items-center"
+                style="background-color:#B6C4E0; padding: 10px;">
+                <div class="ml-lg-5 w-50">
+                    <strong><u>Module - I:</u> Monday, 18 November 2024, 3:30 pm - 5:30 pm<br></strong>
+                    <strong><u>Module - II:</u> Tuesday, 26 November 2024, 3:30 pm - 5:30 pm</strong>
+                </div>
+                <div class="text-right mr-lg-5 w-50">
+                    <strong><u>Venue:</u></strong> Class Room-1, Level-1, KAR Campus<br>
+                    <strong><u>Course convenor:</u></strong> Dr Md Hasnat Ali
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 ml-5" style="max-width: 494px;">
+                <div class="mb-3">
+                    <h5 class="fw-bold"><b>Workshop Overview:</b></h5>
+                    <p>Goal: This workshop equips participants with foundational skills in R programming, data
+                        manipulation, and statistical analysis, setting them up for data science applications.</p>
+                </div>
+                <div class="mb-3">
+                    <h6 class="fw-bold"><b>1. Introduction to Data Science and R</b></h6>
+                    <ul class="list-unstyled">
+                        <li>• Overview of Data Science: Explore the essentials—data, analysis, and insights—and the role
+                            of R in data science.</li>
+                        <li>• Getting Started with R: Install R and RStudio, and learn the interface (console, script
+                            editor, plots).</li>
+                        <li>• Hands-On: Basic commands and variable assignments.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="fw-bold"><b>2. Basics of R Programming</b></h6>
+                    <ul class="list-unstyled">
+                        <li>• Data Types & Structures: Vectors, matrices, lists, and data frames.</li>
+                        <li>• Operations & Functions: Arithmetic, logic, and creating custom functions.</li>
+                        <li>• Data Import/Export: Load from CSV and save data.</li>
+                        <li>• Hands-On: Work with small datasets—subsetting and data manipulation.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right side block -->
+            <div class="col-md-6 mb-4 ml-4" style="max-width: 454px;">
+                <div class="mb-3">
+                    <h6 class="fw-bold"><b>3. Data Manipulation & Visualization</b></h6>
+                    <ul class="list-unstyled">
+                        <li>• Data Wrangling with dplyr: Filter, mutate, summarize, and group operations.</li>
+                        <li>• Visualization with ggplot2: Build histograms, scatter plots, and customize visuals.</li>
+                        <li>• Hands-On: Clean data with dplyr and visualize distributions.</li>
+                    </ul>
+                </div>
+                <div class="mb-3">
+                    <h6 class="fw-bold"><b>4. Introduction to Descriptive Statistics</b></h6>
+                    <ul class="list-unstyled">
+                        <li>• Descriptive Measures: Mean, median, variance, and data distribution.</li>
+                        <li>• Exploratory Data Analysis (EDA): Use summary() and visualize distributions.</li>
+                        <li>• Hands-On: Calculate and interpret basic statistics.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="fw-bold"><b>5. Introduction to Inferential Statistics</b></h6>
+                    <ul class="list-unstyled">
+                        <li>• Hypothesis Testing: Null vs. alternative hypotheses, p-values, significance.</li>
+                        <li>• Common Tests: T-tests and chi-square tests.</li>
+                        <li>• Hands-On: Run tests in R and interpret outputs.</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-md-6 mb-4 ml-5" style="max-width: 385px;">
+                <!-- Right Image Block -->
+                <div class="right-block d-flex align-items-center justify-content-center" style="height: 100%;">
+                    <!-- Centered Image -->
+                    <img src="{% static 'images/new.png' %}" alt="Image 1" class="img-fluid">
+                </div>
+            </div>
+            <!-- This is the last OverView Line -->
+            <div class="overview">
+                <ul>
+                    <li><b>Workshop Overview:Goal: This workshop equips participants with foundational skills in R
+                            programming, data manipulation, and statistical analysis, setting them up for <br> data
+                            science
+                            applications</b></li>
+                </ul>
+            </div>
+        </div>
+        <div class="reg">
+            <form action="/register/" method="post">
+                {% csrf_token %}
+                <p class="text-center">
+                <h3 class="text-center">Click Here To Register <button type="submit" class="btn btn-warning">Register
+                        Here</button></h3>
+                </p>
+            </form>
+        </div>
+
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
 </body>
+
 </html>

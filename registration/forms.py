@@ -11,4 +11,6 @@ class RegistrationForm(forms.ModelForm):
             'department': forms.TextInput(attrs={'class': 'input-field'}),
             'phone_number': forms.TextInput(attrs={'class': 'input-field'}),
             'slap': forms.TextInput(attrs={'class': 'input-field'}),
+            'campus': forms.TextInput(attrs={'class': 'input-field'})
+
         }
